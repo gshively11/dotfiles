@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "[ -r ~/.dotfiles/.bash_profile ] && source ~/.dotfiles/.bash_profile" >> ~/.bash_profile 
+
