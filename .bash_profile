@@ -34,3 +34,18 @@ clear_swp() {
 alias ls="ls -AlGh"
 alias vi="vim"
 
+# Plugins
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+  source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
+fi
+
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
+  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+fi
+
+[ -e ~/.iterm2_shell_integration.bash ] && source ~/.iterm2_shell_integration.bash 
+
+[ -r ~/.fzf.bash ] && source ~/.fzf.bash
