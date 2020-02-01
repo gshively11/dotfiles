@@ -1,10 +1,17 @@
 uptime
 
-GIT_PS1_SHOWDIRTYSTATE=true
+# Path
 
+export PATH=/usr/local/homebrew/bin:$PATH
+
+# PS1
+
+GIT_PS1_SHOWDIRTYSTATE=true
+export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
+
+# Misc Vars
 export EDITOR='vi'
 export LSCOLORS=exfxfeaeBxxehehbadacea
-export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 
 # Functions
 
@@ -36,12 +43,11 @@ alias vi="vim"
 
 # Plugins
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
-  source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
+if [ -r $(brew --prefix)/etc/bash_completion ]; then
+  source $(brew --prefix)/etc/bash_completion
 fi
 
-if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+if [ -r "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
   source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
