@@ -1,9 +1,5 @@
 uptime
 
-# Path
-
-export PATH=/usr/local/homebrew/bin:$PATH
-
 # PS1
 
 GIT_PS1_SHOWDIRTYSTATE=true
