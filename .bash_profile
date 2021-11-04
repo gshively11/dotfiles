@@ -12,8 +12,8 @@ export LSCOLORS=exfxfeaeBxxehehbadacea
 # Functions
 
 codesearch() {
-  phrase="$1"; search_path="$2";
-  grep -r "$phrase" "$search_path" --exclude-dir node_modules --exclude-dir .git --exclude-dir coverage --exclude-dir jspm_packages --exclude-dir dist --exclude package-lock.json --exclude yarn.lock --exclude *.log --exclude junit.xml --exclude *.map --exclude __snapshots_ --exclude .docker_
+  phrase="$1"; search_path="$2"; optional_args="$3";
+  grep -R --exclude-dir node_modules --exclude-dir .git --exclude-dir coverage --exclude-dir jspm_packages --exclude-dir dist --exclude package-lock.json --exclude yarn.lock --exclude *.log --exclude junit.xml --exclude *.map --exclude-dir __snapshots__ --exclude-dir .docker $optional_args "$phrase" "$search_path"
 }
 
 perf() {
