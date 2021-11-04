@@ -1,4 +1,6 @@
-# my dotfiles
+# my dotfiles - DEPRECATED, use my-shell project instead
+
+
 
 Installation
 
